@@ -1,95 +1,99 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<style>* {
-  box-sizing: border-box;
-}
-
-.card {
-  font-size: 12px;
-  width: 85.6mm;
-  height: 53.98mm;
-  background-size: 25mm;
-  background-repeat: no-repeat;
-  background-image: url('https://raw.githubusercontent.com/D4llo/CatTag/main/logo_solidaires.svg');
-  position: relative;
-  background-color: white;
-}
-
-.card th {
-  text-align: right;
-}
-
-.card input {
-  width: 100%;
-}
-
-.card table {
-  position: absolute;
-  bottom: 0;
-}
-
-.cards_wrapper {
-  display: grid;
-  place-items: center;
-}
-
-#cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  background: black;
-  border: 2px solid black;
-}
-
-@media print {
-  /* https://stackoverflow.com/a/356123/1248177 */
-  .no-print,
-  .no-print * {
-    display: none !important;
-  }
-
-  /* https://stackoverflow.com/questions/21485581/css-hide-placeholder-on-print */
-  ::-webkit-input-placeholder {
-    /* WebKit browsers */
-    color: transparent;
-  }
-
-  :-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    color: transparent;
-  }
-
-  ::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: transparent;
-  }
-
-  :-ms-input-placeholder {
-    /* Internet Explorer 10+ */
-    color: transparent;
-  }
-
-  /* https://stackoverflow.com/questions/6670151/how-can-i-force-browsers-to-print-background-images-in-css */
+<style>
   * {
-    -webkit-print-color-adjust: exact !important;
-    /* Chrome, Safari 6 – 15.3, Edge */
-    color-adjust: exact !important;
-    /* Firefox 48 – 96 */
-    print-color-adjust: exact !important;
-    /* Firefox 97+, Safari 15.4+ */
+    box-sizing: border-box;
   }
-}
+
+  .card {
+    font-size: 12px;
+    width: 85.6mm;
+    height: 53.98mm;
+    background-size: 25mm;
+    background-repeat: no-repeat;
+    background-image: url('https://raw.githubusercontent.com/D4llo/CatTag/main/logo_solidaires.svg');
+    position: relative;
+    background-color: white;
+  }
+
+  .card th {
+    text-align: right;
+  }
+
+  .card input {
+    width: 100%;
+  }
+
+  .card table {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .cards_wrapper {
+    display: grid;
+    place-items: center;
+  }
+
+  #cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: black;
+    border: 2px solid black;
+  }
+
+  @media print {
+
+    /* https://stackoverflow.com/a/356123/1248177 */
+    .no-print,
+    .no-print * {
+      display: none !important;
+    }
+
+    /* https://stackoverflow.com/questions/21485581/css-hide-placeholder-on-print */
+    ::-webkit-input-placeholder {
+      /* WebKit browsers */
+      color: transparent;
+    }
+
+    :-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: transparent;
+    }
+
+    ::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: transparent;
+    }
+
+    :-ms-input-placeholder {
+      /* Internet Explorer 10+ */
+      color: transparent;
+    }
+
+    /* https://stackoverflow.com/questions/6670151/how-can-i-force-browsers-to-print-background-images-in-css */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      /* Chrome, Safari 6 – 15.3, Edge */
+      color-adjust: exact !important;
+      /* Firefox 48 – 96 */
+      print-color-adjust: exact !important;
+      /* Firefox 97+, Safari 15.4+ */
+    }
+  }
 </style>
+
 <body>
   <header>
     <h1>Plaque d'identité militante</h1>
   </header>
-  
+
   <div class="no-print">
     <label for="organization">Organisation</label>
     <select name="organization" id="organization">
@@ -101,7 +105,7 @@
     <button typ="button" id="print">imprimer</button>
     <hr>
   </div>
-  
+
   <div class="cards_wrapper">
     <div id="cards">
       <div class="card">
@@ -164,7 +168,7 @@
           </tbody>
         </table>
       </div>
-  
+
       <div class="card">
         <table>
           <tbody>
@@ -225,7 +229,7 @@
           </tbody>
         </table>
       </div>
-  
+
       <div class="card">
         <table>
           <tbody>
@@ -286,7 +290,7 @@
           </tbody>
         </table>
       </div>
-  
+
       <div class="card">
         <table>
           <tbody>
@@ -351,38 +355,39 @@
   </div>
   <script>
     const logos = {
-  "solidaires": {
-    url: "https://raw.githubusercontent.com/D4llo/CatTag/main/logo_solidaires.svg",
-    width: "25mm"
-  },
-  "cgt": {
-    url: "https://www.cgt.fr/favicons/apple-icon-152x152.png",
-    width: "15mm"
-  },
-  "fsu": {
-    url: "https://fsu.fr/wp-content/uploads/2019/04/fav_fsu114.jpg",
-    width: "15mm"
-  }
-}
+      "solidaires": {
+        url: "https://raw.githubusercontent.com/D4llo/CatTag/main/logo_solidaires.svg",
+        width: "25mm"
+      },
+      "cgt": {
+        url: "https://www.cgt.fr/favicons/apple-icon-152x152.png",
+        width: "15mm"
+      },
+      "fsu": {
+        url: "https://fsu.fr/wp-content/uploads/2019/04/fav_fsu114.jpg",
+        width: "15mm"
+      }
+    }
 
-document.querySelector("#organization").onclick = (e) => {
-  const option = e.target.value;
-  const logo = logos[option];
-  resetLogo(logo);
-}
+    document.querySelector("#organization").onclick = (e) => {
+      const option = e.target.value;
+      const logo = logos[option];
+      resetLogo(logo);
+    }
 
-const resetLogo = (logo) => {
-  document.querySelectorAll(".card").forEach(card => {
-    card.style.backgroundImage = `url(${logo.url}`;
-    card.style.backgroundSize = logo.width;
-  });
-}
+    const resetLogo = (logo) => {
+      document.querySelectorAll(".card").forEach(card => {
+        card.style.backgroundImage = `url(${logo.url}`;
+        card.style.backgroundSize = logo.width;
+      });
+    }
 
-document.querySelector("#print").onclick = () => {
-  document.querySelectorAll("input[type='text']").forEach(input => input.value = " ");
-  window.print();
-}
+    document.querySelector("#print").onclick = () => {
+      document.querySelectorAll("input[type='text']").forEach(input => input.value = " ");
+      window.print();
+    }
 
   </script>
 </body>
+
 </html>
