@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -7,103 +7,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plaque d'Identité Militante</title>
     <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍒</text></svg>">
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍒</text></svg>">
     <link rel="stylesheet" href="https://d4llo.github.io/CatTag/scotch.min.css">
     <style>
         * {
-            box-sizing: border-box;
+          box-sizing: border-box;
+      }
+
+      .card {
+          font-size: 12px;
+          width: 85.6mm;
+          height: 53.98mm;
+          position: relative;
+          background-color: white;
+          line-height: 1;
+      }
+
+      .card:after {
+          content: '';
+          position: absolute;
+          top: 2mm;
+          right: 2mm;
+          width: 15mm;
+          height: 15mm;
+          pointer-events: none;
+          background-repeat: no-repeat;
+          z-index: 99;
+          background-size: 15mm;
+      }
+
+      .solidaires .card:after {
+          background-image: url("https://raw.githubusercontent.com/D4llo/CatTag/main/logo_solidaires.svg");
+          background-size: 25mm;
+          width: 25mm;
+          height: 15mm;
+      }
+
+      .cgt .card:after {
+          background-image: url("https://www.cgt.fr/favicons/apple-icon-152x152.png")
+      }
+
+      .fsu .card:after {
+          background-image: url("https://fsu.fr/wp-content/uploads/2019/04/fav_fsu114.jpg")
+      }
+
+      .attac .card:after {
+          background-image: url("https://france.attac.org/squelettes/favicons/apple-touch-icon-152x152.png")
+      }
+
+      .ldh .card:after {
+          background-image: url("https://www.ldh-france.org/wp-content/themes/ldh2018/library/images/apple-icon-touch.png")
+      }
+
+      .card th {
+          text-align: left;
+          width: 38%;
+      }
+
+      .card th,
+      .card td {
+          padding: 4px;
+          vertical-align: middle;
+      }
+
+      .card input {
+          width: 100%;
+          margin-right: 1px;
+          margin-bottom: 1px;
+          padding: 1px;
+      }
+
+      .card table {
+          position: absolute;
+          bottom: 0;
+      }
+
+      .card tbody tr:nth-child(2n) {
+          background-color: inherit;
+      }
+
+      .cards_wrapper {
+          display: grid;
+          place-items: center;
+      }
+
+      #cards {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2px;
+          background: black;
+          border: 2px solid black;
+      }
+
+      @media print {
+
+          /* https://stackoverflow.com/a/356123/1248177 */
+          .no-print,
+          .no-print * {
+            display: none !important;
         }
 
-        .card {
-            font-size: 12px;
-            width: 85.6mm;
-            height: 53.98mm;
-            background-size: 25mm;
-            background-repeat: no-repeat;
-            background-image: url('https://raw.githubusercontent.com/D4llo/CatTag/main/logo_solidaires.svg');
-            position: relative;
-            background-color: white;
-            line-height: 1;
+        /* https://stackoverflow.com/questions/21485581/css-hide-placeholder-on-print */
+        ::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: transparent;
         }
 
-        .card th {
-            text-align: right;
+        :-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: transparent;
         }
 
-        .card th,
-        .card td {
-            padding: 1;
+        ::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: transparent;
         }
 
-        .card input {
-            width: 100%;
-            margin-right: 1px;
-            margin-bottom: 1px;
-            padding: 1px;
+        :-ms-input-placeholder {
+            /* Internet Explorer 10+ */
+            color: transparent;
         }
 
-        .card table {
-            position: absolute;
-            bottom: 0;
+        input {
+            border: 0 !important;
+            border-style: none !important;
+            border-bottom: 1px solid #000!important;
+            border-radius: 0!important;
+
         }
 
-        .card tbody tr:nth-child(2n) {
-            background-color: inherit;
+        /* https://stackoverflow.com/questions/6670151/how-can-i-force-browsers-to-print-background-images-in-css */
+        * {
+            -webkit-print-color-adjust: exact !important;
+            /* Chrome, Safari 6 – 15.3, Edge */
+            color-adjust: exact !important;
+            /* Firefox 48 – 96 */
+            print-color-adjust: exact !important;
+            /* Firefox 97+, Safari 15.4+ */
         }
-
-        .cards_wrapper {
-            display: grid;
-            place-items: center;
-        }
-
-        #cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2px;
-            background: black;
-            border: 2px solid black;
-        }
-
-        @media print {
-
-            /* https://stackoverflow.com/a/356123/1248177 */
-            .no-print,
-            .no-print * {
-                display: none !important;
-            }
-
-            /* https://stackoverflow.com/questions/21485581/css-hide-placeholder-on-print */
-            ::-webkit-input-placeholder {
-                /* WebKit browsers */
-                color: transparent;
-            }
-
-            :-moz-placeholder {
-                /* Mozilla Firefox 4 to 18 */
-                color: transparent;
-            }
-
-            ::-moz-placeholder {
-                /* Mozilla Firefox 19+ */
-                color: transparent;
-            }
-
-            :-ms-input-placeholder {
-                /* Internet Explorer 10+ */
-                color: transparent;
-            }
-
-            /* https://stackoverflow.com/questions/6670151/how-can-i-force-browsers-to-print-background-images-in-css */
-            * {
-                -webkit-print-color-adjust: exact !important;
-                /* Chrome, Safari 6 – 15.3, Edge */
-                color-adjust: exact !important;
-                /* Firefox 48 – 96 */
-                print-color-adjust: exact !important;
-                /* Firefox 97+, Safari 15.4+ */
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
@@ -130,230 +173,17 @@
     </div>
 
     <div class="cards_wrapper">
-        <div id="cards">
+        <div id="cards" class="solidaires">
             <div class="card">
                 <table>
                     <tbody>
-                        <tr>
-                            <th>Nom</th>
-                            <td><input type="text" placeholder="Manu (il/le)"></td>
-                        </tr>
                         <tr>
                             <th>Groupe&nbsp;sanguin</th>
                             <td><input type="text" placeholder="A+"></td>
                         </tr>
                         <tr>
-                            <th>Allergies</th>
-                            <td><input type="text" placeholder="Démocratie"></td>
-                        </tr>
-                        <tr>
-                            <th>Traitement&nbsp;médical</th>
-                            <td><input type="text" placeholder="Paracétamol"></td>
-                        </tr>
-                        <tr>
-                            <th>Avocat·e</th>
-                            <td><input type="text" placeholder="Dupond-Moretti 0821061973"></td>
-                        </tr>
-                        <tr>
-                            <th>Contact si urgence</th>
-                            <td><input type="text" placeholder="Brigitte 062106"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="card">
-                <table>
-                    <tbody>
-                        <tr>
                             <th>Nom</th>
                             <td><input type="text" placeholder="Manu (il/le)"></td>
-                        </tr>
-                        <tr>
-                            <th>Groupe&nbsp;sanguin</th>
-                            <td><input type="text" placeholder="A+"></td>
-                        </tr>
-                        <tr>
-                            <th>Allergies</th>
-                            <td><input type="text" placeholder="Démocratie"></td>
-                        </tr>
-                        <tr>
-                            <th>Traitement&nbsp;médical</th>
-                            <td><input type="text" placeholder="Paracétamol"></td>
-                        </tr>
-                        <tr>
-                            <th>Avocat·e</th>
-                            <td><input type="text" placeholder="Dupond-Moretti 0821061973"></td>
-                        </tr>
-                        <tr>
-                            <th>Contact si urgence</th>
-                            <td><input type="text" placeholder="Brigitte 062106"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="card">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Nom</th>
-                            <td><input type="text" placeholder="Manu (il/le)"></td>
-                        </tr>
-                        <tr>
-                            <th>Groupe&nbsp;sanguin</th>
-                            <td><input type="text" placeholder="A+"></td>
-                        </tr>
-                        <tr>
-                            <th>Allergies</th>
-                            <td><input type="text" placeholder="Démocratie"></td>
-                        </tr>
-                        <tr>
-                            <th>Traitement&nbsp;médical</th>
-                            <td><input type="text" placeholder="Paracétamol"></td>
-                        </tr>
-                        <tr>
-                            <th>Avocat·e</th>
-                            <td><input type="text" placeholder="Dupond-Moretti 0821061973"></td>
-                        </tr>
-                        <tr>
-                            <th>Contact si urgence</th>
-                            <td><input type="text" placeholder="Brigitte 062106"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="card">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Nom</th>
-                            <td><input type="text" placeholder="Manu (il/le)"></td>
-                        </tr>
-                        <tr>
-                            <th>Groupe&nbsp;sanguin</th>
-                            <td><input type="text" placeholder="A+"></td>
-                        </tr>
-                        <tr>
-                            <th>Allergies</th>
-                            <td><input type="text" placeholder="Démocratie"></td>
-                        </tr>
-                        <tr>
-                            <th>Traitement&nbsp;médical</th>
-                            <td><input type="text" placeholder="Paracétamol"></td>
-                        </tr>
-                        <tr>
-                            <th>Avocat·e</th>
-                            <td><input type="text" placeholder="Dupond-Moretti 0821061973"></td>
-                        </tr>
-                        <tr>
-                            <th>Contact si urgence</th>
-                            <td><input type="text" placeholder="Brigitte 062106"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="card">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Nom</th>
-                            <td><input type="text" placeholder="Manu (il/le)"></td>
-                        </tr>
-                        <tr>
-                            <th>Groupe&nbsp;sanguin</th>
-                            <td><input type="text" placeholder="A+"></td>
-                        </tr>
-                        <tr>
-                            <th>Allergies</th>
-                            <td><input type="text" placeholder="Démocratie"></td>
-                        </tr>
-                        <tr>
-                            <th>Traitement&nbsp;médical</th>
-                            <td><input type="text" placeholder="Paracétamol"></td>
-                        </tr>
-                        <tr>
-                            <th>Avocat·e</th>
-                            <td><input type="text" placeholder="Dupond-Moretti 0821061973"></td>
-                        </tr>
-                        <tr>
-                            <th>Contact si urgence</th>
-                            <td><input type="text" placeholder="Brigitte 062106"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="card">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Nom</th>
-                            <td><input type="text" placeholder="Manu (il/le)"></td>
-                        </tr>
-                        <tr>
-                            <th>Groupe&nbsp;sanguin</th>
-                            <td><input type="text" placeholder="A+"></td>
-                        </tr>
-                        <tr>
-                            <th>Allergies</th>
-                            <td><input type="text" placeholder="Démocratie"></td>
-                        </tr>
-                        <tr>
-                            <th>Traitement&nbsp;médical</th>
-                            <td><input type="text" placeholder="Paracétamol"></td>
-                        </tr>
-                        <tr>
-                            <th>Avocat·e</th>
-                            <td><input type="text" placeholder="Dupond-Moretti 0821061973"></td>
-                        </tr>
-                        <tr>
-                            <th>Contact si urgence</th>
-                            <td><input type="text" placeholder="Brigitte 062106"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="card">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Nom</th>
-                            <td><input type="text" placeholder="Manu (il/le)"></td>
-                        </tr>
-                        <tr>
-                            <th>Groupe&nbsp;sanguin</th>
-                            <td><input type="text" placeholder="A+"></td>
-                        </tr>
-                        <tr>
-                            <th>Allergies</th>
-                            <td><input type="text" placeholder="Démocratie"></td>
-                        </tr>
-                        <tr>
-                            <th>Traitement&nbsp;médical</th>
-                            <td><input type="text" placeholder="Paracétamol"></td>
-                        </tr>
-                        <tr>
-                            <th>Avocat·e</th>
-                            <td><input type="text" placeholder="Dupond-Moretti 0821061973"></td>
-                        </tr>
-                        <tr>
-                            <th>Contact si urgence</th>
-                            <td><input type="text" placeholder="Brigitte 062106"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="card">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Nom</th>
-                            <td><input type="text" placeholder="Manu (il/le)"></td>
-                        </tr>
-                        <tr>
-                            <th>Groupe&nbsp;sanguin</th>
-                            <td><input type="text" placeholder="A+"></td>
                         </tr>
                         <tr>
                             <th>Allergies</th>
@@ -380,58 +210,40 @@
     <footer style="text-align: center">
         Fait avec ✊ par <a href="https://solidairesinformatique.org/">Solidaires Informatique</a>
     </footer>
+
     <script>
-        const logos = {
-            "solidaires": {
-                url: "https://raw.githubusercontent.com/D4llo/CatTag/main/logo_solidaires.svg",
-                width: "25mm"
-            },
-            "cgt": {
-                url: "https://www.cgt.fr/favicons/apple-icon-152x152.png",
-                width: "15mm"
-            },
-            "fsu": {
-                url: "https://fsu.fr/wp-content/uploads/2019/04/fav_fsu114.jpg",
-                width: "15mm"
-            },
-            "attac": {
-                url: "https://france.attac.org/squelettes/favicons/apple-touch-icon-152x152.png",
-                width: "15mm"
-            },
-            "ldh": {
-                url: "https://www.ldh-france.org/wp-content/themes/ldh2018/library/images/apple-icon-touch.png",
-                width: "15mm"
-            },
-        }
+        const wrapper = document.querySelector('#cards');
 
         document.querySelector("#organization").onclick = (e) => {
-            const option = e.target.value;
-            const logo = logos[option];
-            resetLogo(logo);
-        }
+          const option = e.target.value;
+          resetLogo(option);
+      }
 
-        const resetLogo = (logo) => {
-            document.querySelectorAll(".card").forEach(card => {
-                card.style.backgroundImage = `url(${logo.url}`;
-                card.style.backgroundSize = logo.width;
-            });
-        }
+      const resetLogo = (logo) => {
+          wrapper.classList.value = "";
+          wrapper.classList.add(logo);
+      }
 
-        document.querySelector("#print").onclick = () => {
-            window.print();
-        }
+      document.querySelector("#print").onclick = () => {
+          window.print();
+      }
 
-        document.querySelector("#synchronize").onclick = () => {
-            const heads = Array.from(document.querySelectorAll(".card:first-child input")).map(x => x.value);
-            const tail = document.querySelectorAll(".card:not(:first-child) input");
+      document.querySelector("#synchronize").onclick = () => {
+          const heads = Array.from(document.querySelectorAll(".card:first-child input")).map(x => x.value);
+          const tail = document.querySelectorAll(".card:not(:first-child) input");
 
 
-            tail.forEach((input, i) => {
-                input.value = heads[i % heads.length]
-            })
-        }
+          tail.forEach((input, i) => {
+            input.value = heads[i % heads.length]
+        }) 
+      }
 
-    </script>
+      const cardHtml = document.querySelector('.card').outerHTML;
+
+
+      for(let i = 0; i < 7; i++) {
+          wrapper.innerHTML += cardHtml;
+      }
+  </script>
 </body>
-
 </html>
