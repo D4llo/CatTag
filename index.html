@@ -5,90 +5,102 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="scotch.min.css">
-<style>
-  * {
-    box-sizing: border-box;
-  }
-
-  .card {
-    font-size: 12px;
-    width: 85.6mm;
-    height: 53.98mm;
-    background-size: 25mm;
-    background-repeat: no-repeat;
-    background-image: url('https://raw.githubusercontent.com/D4llo/CatTag/main/logo_solidaires.svg');
-    position: relative;
-    background-color: white;
-  }
-
-  .card th {
-    text-align: right;
-  }
-
-  .card input {
-    width: 100%;
-  }
-
-  .card table {
-    position: absolute;
-    bottom: 0;
-  }
-
-  .cards_wrapper {
-    display: grid;
-    place-items: center;
-  }
-
-  #cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    background: black;
-    border: 2px solid black;
-  }
-
-  @media print {
-
-    /* https://stackoverflow.com/a/356123/1248177 */
-    .no-print,
-    .no-print * {
-      display: none !important;
-    }
-
-    /* https://stackoverflow.com/questions/21485581/css-hide-placeholder-on-print */
-    ::-webkit-input-placeholder {
-      /* WebKit browsers */
-      color: transparent;
-    }
-
-    :-moz-placeholder {
-      /* Mozilla Firefox 4 to 18 */
-      color: transparent;
-    }
-
-    ::-moz-placeholder {
-      /* Mozilla Firefox 19+ */
-      color: transparent;
-    }
-
-    :-ms-input-placeholder {
-      /* Internet Explorer 10+ */
-      color: transparent;
-    }
-
-    /* https://stackoverflow.com/questions/6670151/how-can-i-force-browsers-to-print-background-images-in-css */
+  <link rel="stylesheet" href="https://d4llo.github.io/CatTag/scotch.min.css">
+  <style>
     * {
-      -webkit-print-color-adjust: exact !important;
-      /* Chrome, Safari 6 – 15.3, Edge */
-      color-adjust: exact !important;
-      /* Firefox 48 – 96 */
-      print-color-adjust: exact !important;
-      /* Firefox 97+, Safari 15.4+ */
+      box-sizing: border-box;
     }
-  }
-</style>
-  </head>
+
+    .card {
+      font-size: 12px;
+      width: 85.6mm;
+      height: 53.98mm;
+      background-size: 25mm;
+      background-repeat: no-repeat;
+      background-image: url('https://raw.githubusercontent.com/D4llo/CatTag/main/logo_solidaires.svg');
+      position: relative;
+      background-color: white;
+      line-height: 1;
+    }
+
+    .card th {
+      text-align: right;
+    }
+
+    .card th, .card td {
+      padding: 1;
+    }
+
+    .card input {
+      width: 100%;
+      margin-right: 1px;
+      margin-bottom: 1px;
+      padding: 1px;
+    }
+
+    .card table {
+      position: absolute;
+      bottom: 0;
+    }
+
+    .card tbody tr:nth-child(2n) {
+        background-color: inherit;
+    }
+
+    .cards_wrapper {
+      display: grid;
+      place-items: center;
+    }
+
+    #cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: black;
+      border: 2px solid black;
+    }
+
+    @media print {
+
+      /* https://stackoverflow.com/a/356123/1248177 */
+      .no-print,
+      .no-print * {
+        display: none !important;
+      }
+
+      /* https://stackoverflow.com/questions/21485581/css-hide-placeholder-on-print */
+      ::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: transparent;
+      }
+
+      :-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: transparent;
+      }
+
+      ::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: transparent;
+      }
+
+      :-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: transparent;
+      }
+
+      /* https://stackoverflow.com/questions/6670151/how-can-i-force-browsers-to-print-background-images-in-css */
+      * {
+        -webkit-print-color-adjust: exact !important;
+        /* Chrome, Safari 6 – 15.3, Edge */
+        color-adjust: exact !important;
+        /* Firefox 48 – 96 */
+        print-color-adjust: exact !important;
+        /* Firefox 97+, Safari 15.4+ */
+      }
+    }
+  </style>
+</head>
 
 <body>
   <header class="no-print">
@@ -122,7 +134,7 @@
             </tr>
             <tr>
               <th>Allergies</th>
-              <td><input type="text" placeholder="Casserolade, Démocratie"></td>
+              <td><input type="text" placeholder="Démocratie"></td>
             </tr>
             <tr>
               <th>Traitement&nbsp;médical</th>
@@ -152,68 +164,7 @@
             </tr>
             <tr>
               <th>Allergies</th>
-              <td><input type="text" placeholder="Casserolade, Démocratie"></td>
-            </tr>
-            <tr>
-              <th>Traitement&nbsp;médical</th>
-              <td><input type="text" placeholder="Paracétamol"></td>
-            </tr>
-            <tr>
-              <th>Avocat</th>
-              <td><input type="text" placeholder="Dupond-Moretti 0821061973"></td>
-            </tr>
-            <tr>
-              <th>Contact si urgence</th>
-              <td><input type="text" placeholder="Brigitte 062106"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="card">
-        <table>
-          <tbody>
-            <tr>
-              <th>Nom</th>
-              <td><input type="text" placeholder="Manu (il/le)"></td>
-            </tr>
-            <tr>
-              <th>Groupe&nbsp;sanguin</th>
-              <td><input type="text" placeholder="A+"></td>
-            </tr>
-            <tr>
-              <th>Allergies</th>
-              <td><input type="text" placeholder="Casserolade, Démocratie"></td>
-            </tr>
-            <tr>
-              <th>Traitement&nbsp;médical</th>
-              <td><input type="text" placeholder="Paracétamol"></td>
-            </tr>
-            <tr>
-              <th>Avocat</th>
-              <td><input type="text" placeholder="Dupond-Moretti 0821061973"></td>
-            </tr>
-            <tr>
-              <th>Contact si urgence</th>
-              <td><input type="text" placeholder="Brigitte 062106"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="card">
-        <table>
-          <tbody>
-            <tr>
-              <th>Nom</th>
-              <td><input type="text" placeholder="Manu (il/le)"></td>
-            </tr>
-            <tr>
-              <th>Groupe&nbsp;sanguin</th>
-              <td><input type="text" placeholder="A+"></td>
-            </tr>
-            <tr>
-              <th>Allergies</th>
-              <td><input type="text" placeholder="Casserolade, Démocratie"></td>
+              <td><input type="text" placeholder="Démocratie"></td>
             </tr>
             <tr>
               <th>Traitement&nbsp;médical</th>
@@ -244,7 +195,7 @@
             </tr>
             <tr>
               <th>Allergies</th>
-              <td><input type="text" placeholder="Casserolade, Démocratie"></td>
+              <td><input type="text" placeholder="Démocratie"></td>
             </tr>
             <tr>
               <th>Traitement&nbsp;médical</th>
@@ -274,7 +225,7 @@
             </tr>
             <tr>
               <th>Allergies</th>
-              <td><input type="text" placeholder="Casserolade, Démocratie"></td>
+              <td><input type="text" placeholder="Démocratie"></td>
             </tr>
             <tr>
               <th>Traitement&nbsp;médical</th>
@@ -305,7 +256,7 @@
             </tr>
             <tr>
               <th>Allergies</th>
-              <td><input type="text" placeholder="Casserolade, Démocratie"></td>
+              <td><input type="text" placeholder="Démocratie"></td>
             </tr>
             <tr>
               <th>Traitement&nbsp;médical</th>
@@ -335,7 +286,68 @@
             </tr>
             <tr>
               <th>Allergies</th>
-              <td><input type="text" placeholder="Casserolade, Démocratie"></td>
+              <td><input type="text" placeholder="Démocratie"></td>
+            </tr>
+            <tr>
+              <th>Traitement&nbsp;médical</th>
+              <td><input type="text" placeholder="Paracétamol"></td>
+            </tr>
+            <tr>
+              <th>Avocat</th>
+              <td><input type="text" placeholder="Dupond-Moretti 0821061973"></td>
+            </tr>
+            <tr>
+              <th>Contact si urgence</th>
+              <td><input type="text" placeholder="Brigitte 062106"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <table>
+          <tbody>
+            <tr>
+              <th>Nom</th>
+              <td><input type="text" placeholder="Manu (il/le)"></td>
+            </tr>
+            <tr>
+              <th>Groupe&nbsp;sanguin</th>
+              <td><input type="text" placeholder="A+"></td>
+            </tr>
+            <tr>
+              <th>Allergies</th>
+              <td><input type="text" placeholder="Démocratie"></td>
+            </tr>
+            <tr>
+              <th>Traitement&nbsp;médical</th>
+              <td><input type="text" placeholder="Paracétamol"></td>
+            </tr>
+            <tr>
+              <th>Avocat</th>
+              <td><input type="text" placeholder="Dupond-Moretti 0821061973"></td>
+            </tr>
+            <tr>
+              <th>Contact si urgence</th>
+              <td><input type="text" placeholder="Brigitte 062106"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <table>
+          <tbody>
+            <tr>
+              <th>Nom</th>
+              <td><input type="text" placeholder="Manu (il/le)"></td>
+            </tr>
+            <tr>
+              <th>Groupe&nbsp;sanguin</th>
+              <td><input type="text" placeholder="A+"></td>
+            </tr>
+            <tr>
+              <th>Allergies</th>
+              <td><input type="text" placeholder="Démocratie"></td>
             </tr>
             <tr>
               <th>Traitement&nbsp;médical</th>
