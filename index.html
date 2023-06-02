@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plaque d'Identité Militante</title>
+    <title>Annexe d'Identité</title>
     <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍒</text></svg>">
     <link rel="stylesheet" href="https://d4llo.github.io/CatTag/scotch.min.css">
     <style>
         * {
           box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, Sans-Serif;
       }
 
       .card {
@@ -60,8 +64,8 @@
       }
 
       .card th {
-          text-align: left;
-          width: 38%;
+          text-align: right;
+          width: 33%;
       }
 
       .card th,
@@ -151,7 +155,7 @@
 
 <body>
     <header class="no-print" style="display: grid; place-items: center;">
-        <h1>Plaque d'Identité Militante</h1>
+        <h1>Annexe d'Identité</h1>
     </header>
 
     <div class="no-print">
@@ -179,18 +183,22 @@
                     <tbody>
                         <tr>
                             <th>Groupe&nbsp;sanguin</th>
-                            <td><input type="text" placeholder="A+"></td>
+                            <td><input type="text" placeholder="A+" style="display: inline-block; width: 50%;"></td>
+                        </tr>
+                        <tr>
+                            <th>Prénom</th>
+                            <td><input type="text" placeholder="Manu"></td>
                         </tr>
                         <tr>
                             <th>Nom</th>
-                            <td><input type="text" placeholder="Manu (il/le)"></td>
+                            <td><input type="text" placeholder="Macron"></td>
                         </tr>
                         <tr>
                             <th>Allergies</th>
                             <td><input type="text" placeholder="Démocratie"></td>
                         </tr>
                         <tr>
-                            <th>Traitement&nbsp;médical</th>
+                            <th>Traitement</th>
                             <td><input type="text" placeholder="Paracétamol"></td>
                         </tr>
                         <tr>
@@ -198,7 +206,7 @@
                             <td><input type="text" placeholder="Dupond-Moretti 0821061973"></td>
                         </tr>
                         <tr>
-                            <th>Contact si urgence</th>
+                            <th>Contact</th>
                             <td><input type="text" placeholder="Brigitte 062106"></td>
                         </tr>
                     </tbody>
@@ -239,7 +247,6 @@
       }
 
       const cardHtml = document.querySelector('.card').outerHTML;
-
 
       for(let i = 0; i < 7; i++) {
           wrapper.innerHTML += cardHtml;
